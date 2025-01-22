@@ -1,0 +1,23 @@
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+  }
+
+  .title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .titleCard{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  ion-footer {
+    --background: transparent;
+    ion-toolbar {
+      --background: #ffffff;
+      border-top: 1px solid var(--ion-color-light);
+    }
+  }

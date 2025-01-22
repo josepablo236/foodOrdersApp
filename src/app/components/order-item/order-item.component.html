@@ -1,0 +1,37 @@
+<ion-accordion-group>
+  <!-- Resumen de la orden -->
+  <ion-accordion>
+    <ion-item slot="header" lines="full">
+      <ion-label>
+        <h3>Orden #{{ order.id }}</h3>
+        <p>Cliente: {{ order.customer }}</p>
+        <p>Pago: {{ order.paymentMethod }}</p>
+        <p style="margin-bottom: 2px;">Total: Q{{ order.total }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button color="secondary" (click)="onEdit()">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" (click)="onDelete()">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+    <!-- Detalles de la orden -->
+    <div slot="content" class="order-details">
+      <ion-list>
+        <ion-item *ngFor="let item of order.items">
+          <ion-label>
+            <h4>{{ item.product.name }}</h4>
+            <p>Cantidad: {{ item.quantity }}</p>
+            <p>Precio Unidad: Q{{ item.product.price }}</p>
+          </ion-label>
+          <ion-label slot="end">
+            <p>Precio total: Q{{ item.totalPrice }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

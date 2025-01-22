@@ -1,0 +1,31 @@
+ion-card {
+    text-align: center;
+    --background: #f9f9f9;
+  }
+  
+  ion-fab-button {
+    --background: #ff9800; /* Color destacado */
+    --color: #fff;
+  }
+
+  .title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .titleCard{
+    font-size: 18px;
+    font-weight: lighter;
+  }
+
+  .number{
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+img{
+    width: 30%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+  }
+  

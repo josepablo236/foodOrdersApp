@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isEdit ? 'Editar cantidad' : selectedCategory?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="product-modal-content">
+  <ion-grid>
+    <ion-row *ngIf="!isEdit">
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Producto</ion-label>
+          <ion-select
+            placeholder="Selecciona un producto"
+            (ionChange)="onProductChange($event)"
+          >
+            <ion-select-option *ngFor="let product of products" [value]="product">
+              {{ product.name }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!isEdit">
+      <ion-col size="12" class="price-info">
+        <ion-label>Precio Unitario: Q{{ selectedProduct?.price }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="quantity-row">
+      <ion-col size="4" class="quantity-button">
+        <ion-button expand="block" (click)="decreaseQuantity()">
+          <ion-icon name="remove"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4" class="quantity-display">
+        <ion-label class="quantity-label">{{ quantity }}</ion-label>
+      </ion-col>
+      <ion-col size="4" class="quantity-button">
+        <ion-button expand="block" (click)="increaseQuantity()">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-toolbar>
+    <ion-button expand="block" color="secondary" (click)="addToOrder()">
+      {{ isEdit ? 'Guardar Cambios' : 'Agregar a la Orden' }}
+    </ion-button>
+  </ion-toolbar>
+</ion-content>
+

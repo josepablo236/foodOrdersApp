@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{isEdit ? 'Editar Orden' : 'Revisar Orden'}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">Volver</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item *ngFor="let item of orderItems; let i = index">
+      <ion-label>
+        <h2>{{ item.product.name }}</h2>
+        <p>Cantidad: {{ item.quantity }}</p>
+        <p>Precio: Q{{ item.product.price }}</p>
+        <p style="font-weight: bold;">Precio total: Q{{ item.totalPrice }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="editItem(i)" color="terciary">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button *ngIf="!isEdit" (click)="removeItem(i)" color="danger">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <h1 class="title">Total: Q{{ total }}</h1>
+
+  <ion-item>
+    <ion-label>Metodo de pago:</ion-label>
+    <ion-select [(ngModel)]="paymentMethod" (ionChange)="calculateChange()">
+      <ion-select-option value="efectivo">Efectivo</ion-select-option>
+      <ion-select-option value="tarjeta">Tarjeta</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="paymentMethod === 'efectivo'">
+    <ion-label>Cantidad Recibida:</ion-label>
+    <ion-input style="font-size: 20px; font-weight: bold;" [(ngModel)]="amountReceived" type="number" (ionChange)="calculateChange()"></ion-input>
+  </ion-item>
+
+  <h1 *ngIf="paymentMethod === 'efectivo'" class="title">Cambio: Q{{ change }}</h1>
+
+  <ion-item>
+    <ion-label>Nombre cliente:</ion-label>
+    <ion-input style="font-size: 20px; font-weight: bold;" [(ngModel)]="customerName" type="text"></ion-input>
+  </ion-item>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="secondary" (click)="confirmOrder()">{{isEdit ? 'Editar orden' : 'Confirmar Orden'}}</ion-button>
+  </ion-toolbar>
+</ion-footer>

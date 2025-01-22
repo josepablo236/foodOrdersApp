@@ -1,0 +1,90 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+    --ion-color-scheme: light;
+    --ion-background-color: #ffffff; /* Fondo blanco */
+    --ion-toolbar-background: #f9f9f9; /* Fondo claro en el toolbar */
+    --ion-tab-bar-background: #ffffff; /* Fondo blanco para el tab-bar */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ion-color-scheme: light;
+    }
+  }
+
+  .sheet-modal {
+    --border-radius: 16px;
+    --background: #ffffff;
+    --box-shadow: 0px -4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-alert {
+    --background: var(--ion-color-light); /* Fondo */
+    --color: var(--ion-color-dark); /* Texto */
+    --border-radius: 16px; /* Bordes redondeados */
+    --width: 90%; /* Ancho máximo */
+  }
+  
+  .custom-alert .alert-title {
+    color: var(--ion-color-secondary); /* Color del título */
+    font-size: 1.2rem;
+  }
+  
+  .custom-alert .alert-message {
+    color: var(--ion-color-dark); /* Color del mensaje */
+    font-size: 1rem;
+  }
+  
+  .custom-alert .alert-button {
+    --background: var(--ion-color-primary); /* Fondo del botón */
+    --color: var(--ion-color-light); /* Texto del botón */
+    --border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  .custom-alert .alert-button-role-cancel {
+    --background: var(--ion-color-light); /* Fondo de botón cancelar */
+    --color: var(--ion-color-dark); /* Texto de botón cancelar */
+  }
+  
+
+
+  
+  
+  

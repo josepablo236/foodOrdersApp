@@ -1,0 +1,15 @@
+.order-details {
+    padding: 10px;
+    background-color: var(--ion-color-light);
+    border-radius: 8px;
+  }
+  
+  ion-item {
+    --min-height: 40px;
+  }
+  
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  

@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid fixed>
+    <!-- Total ventas y ganancia -->
+    <ion-row>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="titleCard">Total de ventas</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h2 class="number">Q{{ totalSales }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="titleCard">Ganancia total</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h2 class="number">Q{{ totalProfit }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Gráfico circular: Categorías más vendidas -->
+  <ion-card style="margin-top: 0.5rem;">
+    <ion-card-header>
+      <ion-card-title class="titleCard">Órdenes por categoria</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="categoryChart"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Gráfico lineal: Tendencia de ventas -->
+  <ion-card style="margin-top: 0.5rem;">
+    <ion-card-header>
+      <ion-card-title class="titleCard">Ventas por día de la semana</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="weeklyTrendChart"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Gráfico de barras: Ventas por mes -->
+  <ion-card style="margin-top: 0.5rem;">
+    <ion-card-header>
+      <ion-card-title class="titleCard">Ventas por mes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="monthlySalesChart"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Top 3 productos más vendidos -->
+  <ion-card style="margin-top: 0.5rem;">
+    <ion-card-header>
+      <ion-card-title class="titleCard">Top 3 Productos más vendidos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="topProductsChart"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Top 5 clientes -->
+  <ion-card style="margin-top: 0.5rem;">
+    <ion-card-header>
+      <ion-card-title class="titleCard">Top 5 Clientes con más compras</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let client of topClients">
+          <ion-label>{{ client.client }}:</ion-label><ion-label slot="end">Q{{ client.total }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Gráfico de metodos de pago -->
+  <ion-card style="margin-top: 0.5rem;">
+    <ion-card-header>
+      <ion-card-title class="titleCard">% Ventas por método de pago</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="paymentMethodChart"></canvas>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

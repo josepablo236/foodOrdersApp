@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categorías</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let category of categories">
+        <ion-card (click)="selectCategory(category)">
+          <ion-card-header>
+            <ion-card-title class="titleCard">{{category.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <img [src]="category.icon" [alt]="category.name">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="productsList.length > 0">
+  <ion-toolbar>
+    <ion-button expand="block" color="secondary" (click)="goToOrder()">
+      Revisar orden
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

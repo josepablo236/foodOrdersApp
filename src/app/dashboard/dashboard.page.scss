@@ -1,0 +1,45 @@
+.stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px 0;
+  
+    div {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .chart-container {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ion-card {
+    text-align: center;
+    --background: #f9f9f9;
+  }
+
+  .title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .titleCard{
+    font-size: 18px;
+    font-weight: lighter;
+  }
+
+  .number{
+    font-weight: bold;
+    font-size: 22px;
+  }
+  

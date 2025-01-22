@@ -1,0 +1,45 @@
+:host {
+    ion-header {
+      --background: #f8f9fa;
+      text-align: center;
+    }
+  
+    .product-modal-content {
+      --padding-start: 16px;
+      --padding-end: 16px;
+    }
+  
+    .price-info {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 16px 0;
+      font-weight: bold;
+    }
+  
+    .quantity-row {
+      align-items: center;
+      text-align: center;
+  
+      .quantity-button {
+        padding: 0;
+      }
+  
+      .quantity-display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .quantity-label {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+
+ion-toolbar {
+    --background: #ffffff;
+    border-top: 1px solid var(--ion-color-light);
+}
+  
